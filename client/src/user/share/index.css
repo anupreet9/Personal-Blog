@@ -1,0 +1,95 @@
+/* share */
+
+.share-post .share {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.share-post {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.share-about .share {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.share-about {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.share-contact .share {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.share-contact {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.share hr {
+  width: 110px;
+  text-align: center;
+}
+
+.share .icons {
+  text-align: left;
+}
+
+.share-title {
+  padding-top: 20px;
+}
+
+.share .heart {
+  background-color: transparent;
+  outline-color: white;
+  padding: 0;
+}
+
+.share .heart:focus {
+  outline-color: white;
+  box-shadow: none;
+}
+
+.share .hearts:focus {
+  outline-color: white;
+  box-shadow: none;
+}
+
+.share .heart:hover {
+  color: rgb(230, 43, 43);
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.share .hearts {
+  color: rgb(230, 43, 43);
+  outline-color: white;
+  background-color: transparent;
+  padding: 0;
+}
+
+.share .whatsapp {
+  color: black;
+  padding-right: 10px;
+}
+
+.share .pinterest {
+  color: black;
+  padding-right: 10px;
+}
+
+.share .whatsapp:hover {
+  color: rgb(49, 179, 49);
+}
+
+.share .pinterest:hover {
+  color: rgb(209, 30, 30);
+}
+
+.share .facebook:hover {
+  color: rgb(26, 51, 195);
+}

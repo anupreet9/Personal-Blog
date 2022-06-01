@@ -1,0 +1,63 @@
+{
+  "name": "website",
+  "homepage": "http://localhost:3000",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently  \"npm run client\" \"npm run server\""
+  },
+  "engines": {
+    "node": "12.19.0"
+  },
+  "dependencies": {
+    "@tinymce/tinymce-react": "^3.8.1",
+    "base-64": "^1.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-jwt-authz": "^2.4.1",
+    "express-openid-connect": "^2.4.0",
+    "express-session": "^1.17.1",
+    "gh-pages": "^4.0.0",
+    "googleapis": "^73.0.0",
+    "handlebars": "^4.7.7",
+    "helmet": "^4.6.0",
+    "http": "0.0.1-security",
+    "http-proxy-middleware": "^1.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^2.0.3",
+    "mongoose": "^5.12.8",
+    "mongoose-findorcreate": "^3.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.5.0",
+    "nodemon": "^2.0.16",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "pm2": "^4.5.6",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-html-parser": "^2.0.2",
+    "react-slick": "^0.28.1",
+    "socket.io": "^4.1.1",
+    "utf8": "^3.0.0",
+    "validator": "^13.5.2"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
+}

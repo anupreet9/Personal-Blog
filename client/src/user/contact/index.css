@@ -1,0 +1,95 @@
+/* contact */
+
+.contact {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.contact-form {
+padding-bottom: 40px;
+}
+
+.contact-img {
+  padding-top: 10px;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-submit {
+  text-align: center;
+}
+
+.share-contact-img {
+  height: 200px;
+  margin-top: 10px;
+}
+
+.share-contact-main {
+  text-align: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 10px;
+  border: double;
+  border-color: rgb(206, 246, 191);
+}
+
+.contact-btn {
+  background-color: black;
+}
+
+.contact-loading {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.query-sent{
+  padding-top: 40px;
+  padding-bottom:60px;
+}
+
+@media only screen and (max-width: 780px) {
+  .contact {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .share-contact-main {
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 10px;
+    border: double;
+    border-color: rgb(206, 246, 191);
+  }
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  display: inline-block;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

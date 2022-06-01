@@ -1,0 +1,242 @@
+.left-padding {
+  padding-left: 25px;
+}
+
+.line-break {
+  border-top: 1.5px solid lightgrey;
+  width: 100%;
+}
+
+/* Comments display */
+
+.comments-area {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.comments-area .comment-list {
+  padding-top: 20px;
+}
+
+.comments-area .date {
+  font-size: 11px;
+}
+
+.comments-area h5 {
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.comments-area .thumb {
+  margin-right: 20px;
+  box-shadow: black;
+}
+
+.comments-area .comment-break {
+  line-height: 1px;
+  width: 100%;
+}
+
+.comments-area .comment {
+  padding-top: 4px;
+  padding-left: 20px;
+  padding-bottom: 8px;
+}
+
+.comments-area .btn-reply {
+  border: 1px solid white;
+  margin-bottom: 20px;
+  font-size: 12px;
+  padding-left: 20px;
+  display: block;
+  font-weight: 600;
+  background-color: transparent;
+  outline: none;
+}
+
+.comments-area .btn-reply:hover {
+  color: grey;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+}
+
+/* comments box */
+.comment-form {
+  margin-bottom: 80px;
+}
+
+.comment-form textarea {
+  width: 90%;
+  padding: 0px;
+  resize: none;
+  background-color: rgba(243, 243, 243, 0.808);
+  border-color: rgb(117, 119, 121);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}
+
+.comment-form textarea:focus {
+  border-color: rgb(117, 119, 121);
+  overflow: hidden;
+  outline: none;
+}
+
+.comment-form label {
+  font-weight: 600;
+}
+
+.comment-form .opened-box {
+  background-color: rgba(243, 243, 243, 0.808);
+  width: 90%;
+}
+
+.comment-form .label-comment {
+  font-size: 14px;
+  padding-left: 15px;
+}
+
+.comment-form input {
+  display: inline-flex;
+}
+
+.comment-form .post-button {
+  display: inline-flex;
+  float: left;
+  margin-top: 15px;
+  padding: 0 2 0 2;
+  background-color: black;
+}
+
+.comment-form .name {
+  display: block;
+  margin-left: 60px;
+  margin-bottom: 10px;
+  height: 30px;
+  width: 220px;
+}
+
+.comment-form .emails {
+  margin-bottom: 10px;
+  width: 220px;
+}
+
+.comment-form .form-check {
+  padding-left: 60px;
+}
+
+.comment-form .form-check-label {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.replyBox-open {
+  display: block;
+}
+.replyBox-close {
+  display: none;
+}
+
+.comment-form .cancelButton {
+  float: right;
+  position: relative;
+  border: 1px solid white;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: transparent;
+  outline: none;
+}
+
+.comment-form .cancelButton:hover {
+  color: grey;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+}
+
+.comment-form .error-msg-red {
+  color: red;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.comment-form .error-msg-green {
+  color: green;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  display: inline-block;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .comment-form .cancelButton {
+    display: block;
+    position: relative;
+    border: 1px solid white;
+    margin-bottom: 0px;
+    padding-right: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: transparent;
+    outline: none;
+  }
+
+  .comment-form .cancelButton:hover {
+    color: grey;
+    cursor: pointer;
+    border: 1px solid white;
+    outline: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .comment-form .emails {
+    margin-bottom: 2px;
+  }
+
+  .comment-form .error-msg-red {
+    color: red;
+    display: block;
+    margin-left: 60px;
+    padding-bottom: 5px;
+    font-size: 15px;
+  }
+
+  .comment-form .error-msg-green {
+    color: green;
+    display: block;
+    margin-left: 60px;
+    padding-bottom: 5px;
+    font-size: 15px;
+  }
+}

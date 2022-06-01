@@ -1,0 +1,217 @@
+.centered {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn {
+  white-space: normal;
+}
+
+.login-btn {
+  margin-top: 50px;
+  margin-left: 560px;
+}
+
+.register-btn {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+/* dashboard */
+.welcome-note {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.dashboard {
+  padding-left: 2px;
+  padding-right: 0px;
+}
+
+.dashboard-btns {
+  display: block;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.dashboard-btn {
+  margin-bottom: 10px;
+}
+
+.Footer {
+  padding-bottom: 40px;
+}
+
+/* admin-post */
+.postButtons {
+  text-align: center;
+}
+
+.postButtons a {
+  margin: 3px;
+  z-index: 10000000000;
+  position: relative;
+}
+
+.postButtons button {
+  margin: 3px;
+  z-index: 10000000000;
+  position: relative;
+}
+
+.thumb {
+  margin-right: 20px;
+  margin-left: 20px;
+  float: left;
+}
+
+.name {
+  font-size: 15px;
+  margin-bottom: 0rem;
+}
+
+.admin-posts {
+  padding-bottom: 50px;
+}
+
+.admin-posts .card {
+  height: 400px;
+  width: 370px;
+  margin-bottom: 5px;
+}
+
+.admin-posts .card:hover {
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.5);
+}
+
+.admin-posts .admin-card-title {
+  color: white;
+  position: absolute;
+  top: 117%;
+  left: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  text-shadow: 0 0 black;
+  text-align: center;
+  background-color: rgba(3, 3, 3, 0.5);
+}
+
+.admin-posts .admin-card-text {
+  color: black;
+  text-align: center;
+}
+
+.centered .card-deck {
+  display: block;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.centered .row {
+  justify-content: center;
+  justify-content: center;
+}
+
+.admin-posts .card-img-overlay {
+  padding: 0px;
+  height: 300px;
+  width: 270px;
+}
+
+.admin-posts .card-img-top {
+  height: 100%;
+  width: auto;
+}
+
+p .date {
+  font-size: 13px;
+  margin-bottom: 13px;
+  margin-left: 13px;
+}
+
+/* comment */
+.table-container {
+  padding: 20px;
+}
+
+.emails {
+  margin-bottom: 0rem;
+}
+
+.name-row {
+  width: 30%;
+}
+
+.btn-group button {
+  margin-right: 8px;
+}
+
+.btn-group {
+  position: relative;
+}
+
+.comment-cell {
+  flex-wrap: wrap;
+}
+
+.cancelbutton {
+  display: block;
+  float: right;
+}
+
+.comment-status {
+  display: inline-block;
+}
+
+.replies {
+  background-color: lightgrey;
+  padding-bottom: 5px;
+}
+
+.edit-comment {
+  border-top: 0px;
+}
+
+.comment-cell button {
+  margin-top: 10px;
+}
+
+.comment {
+  flex-wrap: wrap;
+}
+
+.edit-box {
+  background-color: rgba(243, 243, 243, 0.63);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+/* email */
+
+.email-btns {
+  padding-left: 20px;
+}
+
+.email-delete {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.email-search {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 50%;
+  display: inline-block;
+}
+
+.component {
+  display: none;
+  visibility: none;
+}
+
+.loading {
+  text-align: center;
+  padding-bottom: 40px;
+}

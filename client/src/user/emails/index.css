@@ -1,0 +1,28 @@
+.error-msg-red {
+  color: red;
+  font-size: 15px;
+}
+
+.error-msg-green {
+  color: green;
+  font-size: 15px;
+}
+
+.subscribe-btn {
+  background-color: black;
+}
+
+.subscribe-input {
+  padding-bottom: 10px;
+  width: 70%;
+}
+
+.subscribe {
+  text-align: -webkit-center;
+}
+
+.email-loading {
+  text-align: center;
+  padding-bottom: 40px;
+
+}
