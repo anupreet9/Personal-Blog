@@ -19,7 +19,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // adds a findOrCreate method to models, useful for libraries like Passport which require it
 const findOrCreate = require("mongoose-findorcreate");
-//  module for Node.js applications to allow email sending.
+//  module for Node.js applications to allow email sending
 const nodemailer = require('nodemailer');
 // compiles templates into JavaScript functions
 const handlebars = require('handlebars');
