@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import AppUser from './user/index'
 import Admin from './admin';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
