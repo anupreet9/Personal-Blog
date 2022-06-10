@@ -854,6 +854,6 @@ if (port == null || port == "") {
 
 const server = http.createServer(app);
 
-server.listen(5000, 'localhost', () => {
+server.listen(port, 'localhost', () => {
   console.log(`Node.js App Server at https://${hostname}:${port}/`);
 });
