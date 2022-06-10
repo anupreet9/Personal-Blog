@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "homepage": "https://anupreet9.github.io/Blog/",
+  "homepage": "https://anupreet9.github.io/Blog/client/build/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
