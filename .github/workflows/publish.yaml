@@ -1,4 +1,4 @@
-name: Publish to gh-pages
+name: Publish to github pages
 
 on:
   repository_dispatch:
@@ -16,9 +16,6 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install
-    - run: cd client && npm install && npm run build
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+    - run: npm run build
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build

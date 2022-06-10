@@ -1,13 +1,14 @@
 {
   "name": "website",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://anupreet9.github.io/Blog/",
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
     "client": "cd client && npm start",
     "server": "nodemon server.js",
-    "dev": "concurrently  \"npm run client\" \"npm run server\""
+    "dev": "concurrently  \"npm run client\" \"npm run server\"",
+    "build": "cd client && npm run build"
   },
   "engines": {
     "node": "12.19.0"
