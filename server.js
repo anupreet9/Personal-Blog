@@ -846,14 +846,15 @@ app.route("/api/templates/:templateId")
     })
   });
 
-let port = process.env.PORT;
-const hostname = 'localhost:5000';
+const hostname = 'https://curlyhairedescapade.herokuapp.com';
 if (port == null || port == "") {
   port = 3000;
 }
 
+const host = '0.0.0.0'
+
 const server = http.createServer(app);
 
-server.listen(port, 'localhost', () => {
+server.listen(port, host, () => {
   console.log(`Node.js App Server at https://${hostname}:${port}/`);
 });
