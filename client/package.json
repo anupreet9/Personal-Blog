@@ -60,5 +60,5 @@
     "puppeteer": "^5.3.0",
     "react-router-sitemap": "^1.2.0"
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "https://anupreet9.github.io/Blog/client/build/index.html#/"
 }
