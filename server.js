@@ -55,7 +55,7 @@ let transporter = nodemailer.createTransport({
 // creteas a new express application
 const app = express();
 // allows us to relax the security applied to an API
-app.use(cors({ credentials: true, origin: 'https://anupreet9.github.io/Blog/client/build/index.html#/' }));
+app.use(cors({ credentials: true, origin: 'https://anupreet9.github.io/Blog' }));
 // store user data between HTTP requests
 app.use(session({
   secret: process.env.CLIENT_SECRET,
