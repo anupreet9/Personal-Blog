@@ -846,7 +846,8 @@ app.route("/api/templates/:templateId")
     })
   });
 
-const hostname = 'https://curlyhairedescapade.herokuapp.com';
+let port = process.env.PORT;
+const hostname = 'https://curlyhairedescapade.herokuapp.com/';
 if (port == null || port == "") {
   port = 3000;
 }
