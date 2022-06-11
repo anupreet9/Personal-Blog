@@ -3,7 +3,7 @@
   "homepage": "https://anupreet9.github.io/Blog/",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server.js -p $PORT",
     "client": "cd client && npm start",
     "server": "nodemon server.js",
     "dev": "concurrently  \"npm run client\" \"npm run server\""
