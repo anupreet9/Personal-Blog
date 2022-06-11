@@ -38,7 +38,7 @@ const utf8 = require('utf8');
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com ',
   port: 465,
-  name: 'http://localhost:3000',
+  name: 'https://anupreet9.github.io/Blog/client/build/index.html#/',
   pool: true,
   type: 'OAuth2',
   service: 'Gmail',
@@ -55,7 +55,7 @@ let transporter = nodemailer.createTransport({
 // creteas a new express application
 const app = express();
 // allows us to relax the security applied to an API
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'https://anupreet9.github.io/Blog/client/build/index.html#/' }));
 // store user data between HTTP requests
 app.use(session({
   secret: process.env.CLIENT_SECRET,
@@ -71,13 +71,13 @@ app.use(morgan('combined'));
 //  helps you secure Express apps by setting various HTTP headers 
 app.use(helmet());
 
-// connecct with mongoose database
-// mongoose.connect(process.env.MONGODB_URL,
-//   {
-//     useNewUrlParser: true, useUnifiedTopology: true
-//   })
-//   .then(() => console.log('Database connected.')).catch(err => console.log(err));
-mongoose.connect('mongodb://localhost:27017/websiteDB', { useNewUrlParser: true, useUnifiedTopology: true });
+//connect with mongoose database
+mongoose.connect(process.env.MONGODB_URL,
+  {
+    useNewUrlParser: true, useUnifiedTopology: true
+  })
+  .then(() => console.log('Database connected.')).catch(err => console.log(err));
+//mongoose.connect('mongodb://localhost:27017/websiteDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Each schema maps to a MongoDB collection and 
 // defines the shape of the documents within that collection.
@@ -180,7 +180,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "localhost:5000/auth/google/admin/dashboard",
+  callbackURL: "https://anupreet9.github.io/Blog/client/build/index.html#/auth/google/admin/dashboard",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
   function (accessToken, refreshToken, profile, cb) {
@@ -205,10 +205,10 @@ app.get("/auth/google",
 );
 
 app.get("/auth/google/admin/dashboard",
-  passport.authenticate("google", { failureRedirect: "http://localhost:3000/admin/login" }),
+  passport.authenticate("google", { failureRedirect: "https://anupreet9.github.io/Blog/client/build/index.html#/admin/login" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("http://localhost:3000/admin/dashboard");
+    res.redirect("https://anupreet9.github.io/Blog/client/build/index.html#/admin/dashboard");
   });
 
 function authentication(req, res, next) {
