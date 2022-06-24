@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@tinymce/tinymce-react": "^3.8.1",
+    "babel-loader": "^7.1.5",
     "base-64": "^1.0.0",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
