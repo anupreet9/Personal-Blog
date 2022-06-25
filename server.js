@@ -846,8 +846,15 @@ app.route("/api/templates/:templateId")
     })
   });
 
+
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  })
+
 let port = process.env.PORT;
-const hostname = 'https://curlyhairedescapade.herokuapp.com/';
+const hostname = 'https://apicurlyhairedescapade.herokuapp.com/';
 if (port == null || port == "") {
   port = 3000;
 }
