@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "homepage": "https://anupreet9.github.io/Blog/client/build/",
+  "homepage": "https://curlyhairedescapade.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -61,5 +61,5 @@
     "puppeteer": "^5.3.0",
     "react-router-sitemap": "^1.2.0"
   },
-  "proxy": "https://anupreet9.github.io/Blog/client/build/index.html#/"
+  "proxy": "https://curlyhairedescapade.herokuapp.com/index.html"
 }

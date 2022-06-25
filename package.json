@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "homepage": "https://anupreet9.github.io/Blog/",
+  "homepage": "https://curlyhairedescapade.herokuapp.com",
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js -p $PORT",
