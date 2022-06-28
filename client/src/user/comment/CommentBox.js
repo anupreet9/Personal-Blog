@@ -71,7 +71,7 @@ function CommentBox(props) {
             to: "curlyhairedescapade@gmail.com",
             subject: `New comment added by ${commentInfo.name}, ${commentInfo.email}`
         }
-        var html = `<div>New comment on ${props.postTitle} <br/> Check it out on, <a href="http://curlyhairedescapade.com/admin/dashboard/comments/${postId}">Click here</a>!!</div>`
+        var html = `<div>New comment on ${props.postTitle} <br/> Check it out on, <a href="https://curlyhairedescapade.herokuapp.com/admin/dashboard/comments/${postId}">Click here</a>!!</div>`
         sendEmail(emailInfo.to, emailInfo.subject, html, null)
             .then(() => {
             })

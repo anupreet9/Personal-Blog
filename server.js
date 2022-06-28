@@ -7,8 +7,6 @@ const express = require("express");
 const path = require('path');
 //  MongoDB object modeling tool designed to work in an asynchronous environment
 const mongoose = require('mongoose');
-// providing a Connect/Express middleware that can be used to enable CORS with various options
-const cors = require('cors');
 // an HTTP server-side framework used to create and manage a session middleware
 const session = require('express-session');
 // authenticate requests, which it does through an extensible set of plugins known as strategies
@@ -38,7 +36,7 @@ const utf8 = require('utf8');
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com ',
   port: 465,
-  name: 'https://curlyhairedescapade.herokuapp.com/index.html',
+  name: 'https://curlyhairedescapade.herokuapp.com',
   pool: true,
   type: 'OAuth2',
   service: 'Gmail',
@@ -54,8 +52,6 @@ let transporter = nodemailer.createTransport({
 
 // creteas a new express application
 const app = express();
-// allows us to relax the security applied to an API
-app.use(cors({ credentials: true, origin: 'https://curlyhairedescapade.herokuapp.com' }));
 // store user data between HTTP requests
 app.use(session({
   secret: process.env.CLIENT_SECRET,
@@ -69,7 +65,10 @@ app.use(passport.session());
 // Standard Apache combined log output.
 app.use(morgan('combined'));
 //  helps you secure Express apps by setting various HTTP headers 
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false
+})
+);
 
 //connect with mongoose database
 mongoose.connect(process.env.MONGODB_URL,
@@ -180,7 +179,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "https://curlyhairedescapade.herokuapp.com/index.html/auth/google/admin/dashboard",
+  callbackURL: "https://curlyhairedescapade.herokuapp.com/auth/google/admin/dashboard",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
   function (accessToken, refreshToken, profile, cb) {
@@ -208,7 +207,7 @@ app.get("/auth/google/admin/dashboard",
   passport.authenticate("google", { failureRedirect: "https://curlyhairedescapade.herokuapp.com/index.html/admin/login" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("https://curlyhairedescapade.herokuapp.com/index.html/admin/dashboard");
+    res.redirect("https://curlyhairedescapade.herokuapp.com/admin/dashboard");
   });
 
 function authentication(req, res, next) {
@@ -847,14 +846,14 @@ app.route("/api/templates/:templateId")
   });
 
 
-  app.use(express.static(path.join(__dirname, 'build')));
+  app.use(express.static(path.join(__dirname, 'client/build')));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + 'build/index.html'));
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
   })
 
 let port = process.env.PORT;
-const hostname = 'https://apicurlyhairedescapade.herokuapp.com/';
+const hostname = 'https://curlyhairedescapade.herokuapp.com/';
 if (port == null || port == "") {
   port = 3000;
 }

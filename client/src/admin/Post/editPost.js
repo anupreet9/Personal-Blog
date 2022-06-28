@@ -29,7 +29,7 @@ function EditPost() {
         quickbars_insert_toolbar: "image media styleselect hr",
         relative_urls: false,
         remove_script_host: false,
-        document_base_url: 'http://curlyhairedescapade.com/',
+        document_base_url: 'https://curlyhairedescapade.herokuapp.com/',
         force_br_newlines: true,
         inline_styles: true,
         branding: false,

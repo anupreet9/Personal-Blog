@@ -65,7 +65,7 @@ function Contact() {
             to: "curlyhairedescapade@gmail.com",
             subject: `Query from ${info.name}, ${info.email}`
         }
-        var html = `<div>${info.query} <br/> To reply, <a href="http://curlyhairedescapade.com/admin/dashboard/email/query/?name=${info.name}&email=${info.email}&query=${info.query}">Click here</a>!!</div>`
+        var html = `<div>${info.query} <br/> To reply, <a href="https://curlyhairedescapade.herokuapp.com/admin/dashboard/email/query/?name=${info.name}&email=${info.email}&query=${info.query}">Click here</a>!!</div>`
         sendEmail(emailInfo.to, emailInfo.subject, html, null)
             .then(() => {
                 setAlert(true);
