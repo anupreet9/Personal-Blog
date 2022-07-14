@@ -6,6 +6,7 @@ import validator from 'validator'
 import Subscribe from '../emails/subscribe';
 import Loading from '../loading';
 import { Helmet } from 'react-helmet'
+import domain from '../domain';
 
 function Contact() {
     const [info, setInfo] = useState({
@@ -65,7 +66,7 @@ function Contact() {
             to: "curlyhairedescapade@gmail.com",
             subject: `Query from ${info.name}, ${info.email}`
         }
-        var html = `<div>${info.query} <br/> To reply, <a href="https://curlyhairedescapade.herokuapp.com/admin/dashboard/email/query/?name=${info.name}&email=${info.email}&query=${info.query}">Click here</a>!!</div>`
+        var html = `<div>${info.query} <br/> To reply, <a href="${domain}/admin/dashboard/email/query/?name=${info.name}&email=${info.email}&query=${info.query}">Click here</a>!!</div>`
         sendEmail(emailInfo.to, emailInfo.subject, html, null)
             .then(() => {
                 setAlert(true);

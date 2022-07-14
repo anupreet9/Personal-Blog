@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { getAllEmails, sendEmail } from '../../services/mails';
 import { Editor } from '@tinymce/tinymce-react';
+import domain from '../domain';
 
 function SendEmail() {
 
@@ -29,7 +30,7 @@ function SendEmail() {
         quickbars_insert_toolbar: "image media styleselect hr",
         relative_urls: false,
         remove_script_host: false,
-        document_base_url: 'https://curlyhairedescapade.herokuapp.com/',
+        document_base_url: domain,
         force_br_newlines: true,
         inline_styles: true,
         branding: false,
@@ -78,7 +79,7 @@ function SendEmail() {
         status: false,
         text: ""
     });
-    const [html, setHtml] = useState(`<div><a href="https://curlyhairedescapade.herokuapp.com/home"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.ibb.co/q07rnNh/Untitled-1-November-2020-01-43-36-6.jpg" alt="" width="318" height="216" /></a></div> <div>&nbsp;</div> <div>&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;"><hr style="width: 80%; border-top: 1.5px solid lightgrey;" /> <h5 class="subtitle" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; color: #212529; font-size: 1.25rem; padding-top: 25px;">A regular curly haired</h5> <h5 class="subtitle" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; color: #212529; font-size: 1.25rem; padding-top: 25px;"><span style="background-color: #ffffff; color: #000000;"><a style="text-decoration: none; box-shadow: none; background-color: #ffffff; color: #000000;" href="https://curlyhairedescapade.herokuapp.com/unsubscribe/{{randomString}}"><span style="font-size: 10pt; background-color: #ffffff;">Unsubscribe&nbsp;</span></a></span></h5> <p><span style="font-size: 10pt;"><em>Connect with us<br /><br /><a href="https://www.facebook.com/CurlyHairedEscapade/"><img src="https://i.ibb.co/dsN5try/iconfinder-Circled-Facebook-svg-5279111.png" alt="" width="27" height="27" /></a>&nbsp; &nbsp;<a href="https://instagram.com/acurlyhairedescapade?igshid=1chwyyomvc5bv"><img src="https://i.ibb.co/JrZQ3YN/iconfinder-38-instagram-1161953.png" alt="" width="28" height="28" /></a> &nbsp; <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=curlyhairedescapade@gmail.com"><img src="https://i.ibb.co/FwryjbR/gmail.png" alt="" width="29" height="29" /></a><br /></em></span></p> </div>`);
+    const [html, setHtml] = useState(`<div><a href="${domain}/home"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://i.ibb.co/q07rnNh/Untitled-1-November-2020-01-43-36-6.jpg" alt="" width="318" height="216" /></a></div> <div>&nbsp;</div> <div>&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;">&nbsp;</div> <div style="text-align: center;"><hr style="width: 80%; border-top: 1.5px solid lightgrey;" /> <h5 class="subtitle" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; color: #212529; font-size: 1.25rem; padding-top: 25px;">A regular curly haired</h5> <h5 class="subtitle" style="box-sizing: border-box; margin-top: 0px; margin-bottom: 0.5rem; font-weight: 500; line-height: 1.2; color: #212529; font-size: 1.25rem; padding-top: 25px;"><span style="background-color: #ffffff; color: #000000;"><a style="text-decoration: none; box-shadow: none; background-color: #ffffff; color: #000000;" href="${domain}/unsubscribe/{{randomString}}"><span style="font-size: 10pt; background-color: #ffffff;">Unsubscribe&nbsp;</span></a></span></h5> <p><span style="font-size: 10pt;"><em>Connect with us<br /><br /><a href="https://www.facebook.com/CurlyHairedEscapade/"><img src="https://i.ibb.co/dsN5try/iconfinder-Circled-Facebook-svg-5279111.png" alt="" width="27" height="27" /></a>&nbsp; &nbsp;<a href="https://instagram.com/acurlyhairedescapade?igshid=1chwyyomvc5bv"><img src="https://i.ibb.co/JrZQ3YN/iconfinder-38-instagram-1161953.png" alt="" width="28" height="28" /></a> &nbsp; <br /></em></span></p> </div>`);
     const mounted = useRef(true);
 
     useEffect(() => {
@@ -118,8 +119,10 @@ function SendEmail() {
 
     function handleSubmit(event) {
         event.preventDefault();
+        console.log(to);
         to.map(function (email) {
 
+            console.log("aati kya")
             sendEmail(email.email, subject, html, email.randomString)
                 .then((text) => {
                     setAlert({
@@ -130,6 +133,8 @@ function SendEmail() {
                     setTo([]);
                     setSubject("");
                 })
+                
+        console.log("aati 2")
             return 1;
         })
 

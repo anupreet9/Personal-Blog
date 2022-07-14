@@ -18,7 +18,7 @@ function DeleteSubs() {
                 }
             })
         return () => mounted.current = false;
-    }, [subs])
+    }, [])
 
     function handleDelete(randomString) {
         deleteSpecificEmail(randomString)

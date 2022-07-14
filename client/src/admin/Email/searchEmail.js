@@ -18,7 +18,7 @@ function EditEmail() {
                 }
             })
         return () => mounted.current = false;
-    }, [templates])
+    }, [])
 
 
     function handleDelete(templateId) {

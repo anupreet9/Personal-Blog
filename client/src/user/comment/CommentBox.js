@@ -3,6 +3,7 @@ import './index.css';
 import { setItem, editSpecificComment } from '../../services/comment'
 import validator from 'validator'
 import { sendEmail } from '../../services/mails';
+import domain from '../domain';
 
 function CommentBox(props) {
     const [postId, setPostId] = useState(null);
@@ -71,7 +72,7 @@ function CommentBox(props) {
             to: "curlyhairedescapade@gmail.com",
             subject: `New comment added by ${commentInfo.name}, ${commentInfo.email}`
         }
-        var html = `<div>New comment on ${props.postTitle} <br/> Check it out on, <a href="https://curlyhairedescapade.herokuapp.com/admin/dashboard/comments/${postId}">Click here</a>!!</div>`
+        var html = `<div>New comment on ${props.postTitle} <br/> Check it out on, <a href="${domain}/admin/dashboard/comments/${postId}">Click here</a>!!</div>`
         sendEmail(emailInfo.to, emailInfo.subject, html, null)
             .then(() => {
             })

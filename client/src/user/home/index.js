@@ -3,6 +3,7 @@ import Slideshow from './slideshow'
 import './index.css'
 import Subscribe from "../emails/subscribe"
 import { Helmet } from 'react-helmet'
+import domain from '../domain';
 
 function Home() {
     useEffect(() => {
@@ -24,7 +25,7 @@ function Home() {
             <div className="home-contact text-center">
                 <img className="home-contact-img" src="https://media.giphy.com/media/GWYIr9KFkr8Yfv9j7j/giphy.gif" alt="contact-img"></img>
                 <p className="home-contact-title">For any query:</p>
-                <a type="button" className="home-contact-link btn" href="https://curlyhairedescapade.herokuapp.com/contact">Contact Us</a>
+                <a type="button" className="home-contact-link btn" href={`${domain}/contact`}>Contact Us</a>
             </div>
             <div className="home-share">
                 <div className="home-share-img-div">

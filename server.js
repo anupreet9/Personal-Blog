@@ -32,11 +32,13 @@ const base64 = require('base-64');
 // UTF-8 encoder/decoder written in JavaScript
 const utf8 = require('utf8');
 
+//const domain = "https://curlyhairedescapade.herokuapp.com";
+const domain = "http://localhost:3000";
+
 // creates transport object wwhivh uses SMTP, its a protocol used between doffernt email hosts
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com ',
   port: 465,
-  name: 'https://curlyhairedescapade.herokuapp.com',
   pool: true,
   type: 'OAuth2',
   service: 'Gmail',
@@ -52,6 +54,7 @@ let transporter = nodemailer.createTransport({
 
 // creteas a new express application
 const app = express();
+app.use(express.json());
 // store user data between HTTP requests
 app.use(session({
   secret: process.env.CLIENT_SECRET,
@@ -179,7 +182,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "https://curlyhairedescapade.herokuapp.com/auth/google/admin/dashboard",
+  callbackURL: domain + "/auth/google/admin/dashboard",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
   function (accessToken, refreshToken, profile, cb) {
@@ -191,9 +194,6 @@ passport.use(new GoogleStrategy({
 ));
 
 // routes the HTTP GET Requests to the path which is being specified with the specified callback functions
-app.get("/", function (req, res) {
-  res.send("root redirect")
-})
 
 app.get("/api", function (req, res) {
   res.send("Hello from api")
@@ -204,10 +204,10 @@ app.get("/auth/google",
 );
 
 app.get("/auth/google/admin/dashboard",
-  passport.authenticate("google", { failureRedirect: "https://curlyhairedescapade.herokuapp.com/index.html/admin/login" }),
+  passport.authenticate("google", { failureRedirect: domain + "/admin/login" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("https://curlyhairedescapade.herokuapp.com/admin/dashboard");
+    res.redirect(domain + "/admin/dashboard");
   });
 
 function authentication(req, res, next) {
@@ -235,6 +235,8 @@ function authentication(req, res, next) {
 
 }
 
+
+// hides data pages if this is set
 //app.use(authentication);
 
 (function () {
@@ -246,6 +248,7 @@ function authentication(req, res, next) {
   });
 
   app.post("/api/register", function (req, res) {
+    console.log("USER"+req.body.username);
     User.register({ username: req.body.username }, req.body.password, function (err, user) {
       if (err) {
         console.log(err);
@@ -631,6 +634,7 @@ app.route("/api/send-email")
       subject: req.body.subject,
       html: htmlToSend
     };
+    console.log(html);
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
         console.log(error);
@@ -853,7 +857,7 @@ app.route("/api/templates/:templateId")
   })
 
 let port = process.env.PORT;
-const hostname = 'https://curlyhairedescapade.herokuapp.com/';
+const hostname = domain;
 if (port == null || port == "") {
   port = 3000;
 }

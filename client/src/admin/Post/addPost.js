@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { setItem } from '../../services/posts'
+import domain from '../domain';
 
 function Add() {
   var config = {
@@ -28,7 +29,7 @@ function Add() {
     quickbars_insert_toolbar: "image media styleselect hr",
     relative_urls: false,
     remove_script_host: false,
-    document_base_url: 'https://curlyhairedescapade.herokuapp.com/',
+    document_base_url: domain,
     force_br_newlines: true,
     inline_styles: true,
     branding: false,
@@ -132,7 +133,7 @@ function Add() {
       return { ...prevValues, [name]: !edit }
     });
   }
-
+console.log(process.env.REACT_APP_TINY_API_KEY);
   return (
     <div className="centered">
       <h1 className="text-center">Add Post</h1>

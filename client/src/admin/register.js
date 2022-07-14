@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { sendToRegister } from "../services/authenticate";
+import domain from './domain';
 
 function Register() {
     const [registerInfo, setRegisterInfo] = useState({
@@ -35,7 +36,7 @@ function Register() {
     }
 
     function urlChange() {
-        window.location.replace("localhost:5000/auth/google");
+        window.location.replace(domain + "/auth/google");
     }
 
     return (

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Editor } from '@tinymce/tinymce-react';
 import { getSpecificPost, editSpecificPost } from '../../services/posts'
+import domain from '../domain';
 
 function EditPost() {
     var config = {
@@ -29,7 +30,7 @@ function EditPost() {
         quickbars_insert_toolbar: "image media styleselect hr",
         relative_urls: false,
         remove_script_host: false,
-        document_base_url: 'https://curlyhairedescapade.herokuapp.com/',
+        document_base_url: domain,
         force_br_newlines: true,
         inline_styles: true,
         branding: false,

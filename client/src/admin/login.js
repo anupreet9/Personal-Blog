@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { sendToLogin } from "../services/authenticate";
+import domain from './domain'
 
 function Login() {
     useEffect(() => {
@@ -36,7 +37,7 @@ function Login() {
     }
 
     function urlChange() {
-        window.location.replace("localhost:5000/auth/google");
+        window.location.replace(domain+ "/auth/google");
     }
 
     return (
