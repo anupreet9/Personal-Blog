@@ -58,7 +58,6 @@ function Subscribe() {
         setEmail((prevValues) => {
             return { ...prevValues, [name]: value }
         });
-        console.log(email)
         if (validator.isEmail(email.emailAddress)) {
             setEmailError({
                 text: 'Valid Email',

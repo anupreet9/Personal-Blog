@@ -32,7 +32,6 @@ const base64 = require('base-64');
 // UTF-8 encoder/decoder written in JavaScript
 const utf8 = require('utf8');
 
-//const domain = "https://curlyhairedescapade.herokuapp.com";
 const domain = "https://curlyhairedescapade.herokuapp.com";
 
 // creates transport object wwhivh uses SMTP, its a protocol used between doffernt email hosts
@@ -182,8 +181,9 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: domain + "/auth/google/admin/dashboard",
-  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  callbackURL: "/auth/google/admin/dashboard",
+  userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+  proxy: true
 },
   function (accessToken, refreshToken, profile, cb) {
     console.log(profile);
