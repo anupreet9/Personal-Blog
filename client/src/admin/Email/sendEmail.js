@@ -121,8 +121,6 @@ function SendEmail() {
         event.preventDefault();
         console.log(to);
         to.map(function (email) {
-
-            console.log("aati kya")
             sendEmail(email.email, subject, html, email.randomString)
                 .then((text) => {
                     setAlert({
@@ -134,7 +132,6 @@ function SendEmail() {
                     setSubject("");
                 })
                 
-        console.log("aati 2")
             return 1;
         })
 

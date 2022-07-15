@@ -33,7 +33,7 @@ const base64 = require('base-64');
 const utf8 = require('utf8');
 
 //const domain = "https://curlyhairedescapade.herokuapp.com";
-const domain = "http://localhost:3000";
+const domain = "https://curlyhairedescapade.herokuapp.com";
 
 // creates transport object wwhivh uses SMTP, its a protocol used between doffernt email hosts
 let transporter = nodemailer.createTransport({

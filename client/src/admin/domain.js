@@ -1,2 +1,2 @@
-const domain =  "http://localhost:3000";
+const domain =  "https://curlyhairedescapade.herokuapp.com";
 export default domain;
