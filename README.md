@@ -29,7 +29,9 @@ Contact - Viewer can ask the admin any query.
 ![Admin Portal](https://user-images.githubusercontent.com/26858784/179403376-95b9f22a-ce16-483d-84cf-6844de06e29b.png)
 
 This admin portal can be accessed at https://curlyhairedescapade.herokuapp.com/admin. Then click login and enter the following details -
+
 Email: test123@gmail.com
+
 Password: zdfthhjikolperwqtyun965
 
 One can see the following options now - 
