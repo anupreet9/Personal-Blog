@@ -101,8 +101,8 @@ function Admin() {
                                 <Login authenticated={authenticated} />
                             </Route>
                             <Route exact path="/admin">
-                                <a className="btn btn-dark btn-lg login-btn" href="/admin/register" role="button">Register</a>
-                                <a className="btn btn-dark btn-lg register-btn" href="/admin/login" role="button">Login</a>
+                                <a className="btn btn-dark btn-lg register-btn" href="/admin/register" role="button" disableds>Register</a>
+                                <a className="btn btn-dark btn-lg login-btn" href="/admin/login" role="button">Login</a>
                             </Route>
                             <ProtectedRoute exact path="/admin/dashboard" component={Dashboard} authenticated={authenticated} />
                             <ProtectedRoute exact path="/admin/dashboard/add" component={Add} authenticated={authenticated} />

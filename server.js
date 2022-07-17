@@ -34,7 +34,7 @@ const utf8 = require('utf8');
 
 const domain = "https://curlyhairedescapade.herokuapp.com";
 
-// creates transport object wwhivh uses SMTP, its a protocol used between doffernt email hosts
+// creates transport object wwhivh uses SMTP, its a protocol used between differnt email hosts
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com ',
   port: 465,
