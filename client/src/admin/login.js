@@ -63,7 +63,7 @@ function Login() {
                     </div>
                 </div>
 
-                <div className="col-sm-4">
+                {/* <div className="col-sm-4">
                     <div className="card">
                         <div className="card-body">
                             <button className="btn btn-block btn-social btn-google" onClick={urlChange}>
@@ -72,7 +72,7 @@ function Login() {
                                    </button>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </div>
 
